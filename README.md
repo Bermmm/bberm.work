@@ -9,7 +9,7 @@ Portfolio site for **Brayden Berman**, a growth marketer and AI automation build
 ## What's on it
 
 - **A candidate report.** The hero is styled like the used-car listing reports from [CarLens](https://carlens.ca), applied to me: verdict, strong points, red flags and a question to ask.
-- **The CarLens case study.** Real Google Search Console data (Aug–Oct 2026): average position from #33 to #12.6, 6.5K impressions across 699 queries and 415 AI Overview / AI Mode impressions. There's a section on what *hasn't* worked yet too.
+- **The CarLens case study.** One growth chart built from real Google Search Console data (Aug–Nov 2026): average position improved from 26 to 12 between August and October, then daily search impressions rose 2.3× and AI-search impressions 5× in the two weeks after the calculator launch. It also covers what *hasn't* worked yet, like average position slipping to 18 as the new pages ranked for harder searches.
 - **Every number has a source.** Each stat is labeled with where it came from. Reach isn't presented as conversions.
 - **Things I've built.** The CarLens calculator suite, the open-source [gsc-striking-distance](https://github.com/Bermmm/gsc-striking-distance) tool and a multi-agent data pipeline (in progress).
 - **A custom 404.** Visit any broken link, like [bberm.work/anything](https://bberm.work/anything), to get a "Listing not found" report.
