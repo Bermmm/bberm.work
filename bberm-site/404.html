@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1322">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listing not found · Brayden Berman</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+:root {
+  --bg: #FAFAF9; --card: #FFFFFF; --ink: #0A0A0A; --muted: #57534E; --line: #E7E5E4;
+  --blue: #2350E6; --flag: #A85407; --flag-soft: #FBEEDC; --pass: #12795A; --pass-soft: #DDF3EA;
+  --cta: #2350E6; --cta-ink: #FFFFFF; --report-shadow: 0 1px 2px rgba(0,0,0,.04), 0 16px 48px -24px rgba(0,0,0,.2);
+  --display: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0A0A0A; --card: #111111; --ink: #FAFAFA; --muted: #A1A1AA; --line: #242424;
+  --blue: #6E8BFF; --flag: #F2AE56; --flag-soft: #2E2210; --pass: #4FCB9C; --pass-soft: #0F2A21;
+  --cta: #FAFAFA; --cta-ink: #0A0A0A; --report-shadow: 0 0 0 1px rgba(110,139,255,.12), 0 30px 80px -30px rgba(110,139,255,.35); color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--display); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  display: grid; place-items: center; padding: 48px max(20px, env(safe-area-inset-left, 0px)) 48px max(20px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+main { width: 100%; max-width: 560px; display: grid; gap: 28px; }
+.logo { font-weight: 650; letter-spacing: -0.03em; font-size: 20px; text-decoration: none; }
+.logo span { color: var(--blue); }
+.report { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--report-shadow); }
+.top { display: flex; gap: 8px; padding: 14px; border-bottom: 1px solid var(--line); }
+.field { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font-family: var(--mono); font-size: 14px; background: var(--bg); white-space: nowrap; overflow: hidden; }
+.field span { overflow: hidden; text-overflow: ellipsis; }
+.field svg { flex: none; color: var(--muted); }
+.head { padding: 18px 20px 6px; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+.subject { padding: 0 20px 18px; border-bottom: 1px dashed var(--line); }
+h1 { margin: 0; font-size: clamp(34px, 7vw, 48px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.04; text-wrap: balance; }
+.subject p { margin: 8px 0 0; color: var(--muted); }
+dl { margin: 0; padding: 6px 20px 18px; }
+.row { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.row:last-child { border-bottom: 0; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+dd { margin: 0; min-width: 0; }
+.pill { display: inline-flex; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-right: 8px; }
+.flag { background: var(--flag-soft); color: var(--flag); }
+.pass { background: var(--pass-soft); color: var(--pass); }
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+li { position: relative; padding-left: 15px; }
+li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 2px; background: var(--flag); }
+li span { color: var(--muted); }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; font-weight: 600; font-size: 15px; padding: 11px 18px; border-radius: 8px; border: 1px solid var(--ink); text-decoration: none; transition: background .15s, color .15s; }
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn.solid { background: var(--cta); border-color: var(--cta); color: var(--cta-ink); }
+.btn.solid:hover { filter: brightness(1.1); }
+@media (max-width: 480px) { .row { grid-template-columns: 1fr; gap: 4px; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="/">BERM<span>.</span></a>
+  <div class="report">
+    <div class="top">
+      <div class="field"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="path">bberm.work/this-page</span></div>
+    </div>
+    <div class="head mono"><span>Listing report</span><span>Error 404</span></div>
+    <div class="subject">
+      <h1>Listing not found.</h1>
+      <p>Whatever you were looking for isn't on this lot.</p>
+    </div>
+    <dl>
+      <div class="row"><dt>Verdict</dt><dd><span class="pill flag">Walk away</span>This page doesn't exist</dd></div>
+      <div class="row"><dt>Red flags</dt><dd><ul><li>No page at this address <span>· it may have moved</span></li><li>Seller isn't answering <span>· because there's no seller</span></li></ul></dd></div>
+      <div class="row"><dt>Better options</dt><dd><span class="pill pass">Pass</span>The homepage, the CarLens case study or the resume</dd></div>
+    </dl>
+  </div>
+  <div class="ctas">
+    <a class="btn solid" href="/">Back to the homepage</a>
+    <a class="btn" href="/#carlens">CarLens case study</a>
+    <a class="btn" href="/Brayden_Berman_Resume.pdf">Resume</a>
+  </div>
+</main>
+<script>
+  try { var p = location.pathname || "/"; if (p !== "/" && p.indexOf("404") === -1) document.getElementById("path").textContent = location.host + p; } catch (e) {}
+</script>
+</body>
+</html>
