@@ -193,6 +193,9 @@ section { padding-block: 88px; border-top: 1px solid var(--line); }
 .update-stats span { font-size: 14px; color: var(--muted); }
 .update p { color: var(--muted); font-size: 15px; max-width: 46em; }
 .update p a { color: var(--blue); }
+.update p b { color: var(--ink); font-weight: 600; }
+.mini-chart { display: grid; gap: 6px; }
+.mini-chart svg { min-width: 520px; }
 .known { margin-top: 16px; border: 1px solid var(--flag); border-radius: 12px; background: var(--flag-soft); padding: 26px 24px; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: 20px 40px; }
 @media (max-width: 760px) { .known { grid-template-columns: 1fr; } }
 .known h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.03em; margin-top: 8px; }
@@ -422,17 +425,21 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="update-head">
         <div>
           <span class="pill pass">Update · Nov 2026</span>
-          <h3>I shipped a calculator suite. Google picked it up within two days.</h3>
+          <h3>Two weeks after the calculators launched, daily search traffic more than doubled.</h3>
         </div>
-        <span class="mono" style="color:var(--muted)">Source: Search Console · data through Nov 6</span>
+        <span class="mono" style="color:var(--muted)">Search Console · Nov 3–16 vs Oct 6 – Nov 2</span>
       </div>
       <div class="update-stats">
-        <div><b>7</b><span>calculators: lease, loan, fuel, affordability and more, on official NRCan fuel data</span></div>
-        <div><b>#7.7</b><span>average position for the lease calculator in its first days</span></div>
-        <div><b>2.6×</b><span>daily search impressions on Nov 6 vs the previous 4-week average</span></div>
-        <div><b>~7×</b><span>daily AI Overview / AI Mode impressions over the same comparison</span></div>
+        <div><b>2.3×</b><span>daily search impressions: 179 a day, up from 78</span></div>
+        <div><b>3.2×</b><span>daily clicks: 16 clicks in 14 days, vs 10 in the 28 days before</span></div>
+        <div><b>5.1×</b><span>daily AI Overview / AI Mode impressions: 24 a day, up from 4.7</span></div>
+        <div><b>1,589</b><span>impressions on new pages: the 7 calculators (895) and a lease-vs-finance guide (694)</span></div>
       </div>
-      <p>The calculators link to and from the /cars pages, which is the internal-linking fix my <a href="https://github.com/Bermmm/gsc-striking-distance" target="_blank" rel="noopener">striking-distance tool</a> pointed to. This is only a few days of data, so treat it as an early signal. I'll update it with a full month. <a href="https://carlens.ca/tools" target="_blank" rel="noopener">Try the calculators</a>.</p>
+      <div class="mini-chart">
+        <div class="chart-wrap" id="update-chart" role="img" aria-label="Daily search impressions for carlens.ca from Oct 6 to Nov 16, 2026. Around 50 to 115 a day through October, then 136 on Nov 5 rising to a peak of 276 on Nov 8 after the calculators launched on Nov 4, and 245 on Nov 16."></div>
+        <div class="legend"><span><i style="background:var(--chart-bar)"></i>Search impressions per day</span><span><i style="background:var(--blue)"></i>Calculators live (Nov 4)</span></div>
+      </div>
+      <p><b>The honest part:</b> average position got worse, from 12 to 18. The new pages rank for broad, competitive searches like "lease vs finance" and "car loan calculator Ontario," where CarLens still sits on page two or lower. More impressions at lower positions pull the average down. Clicks are still small. The next step is the same striking-distance work: push these pages up. <a href="https://carlens.ca/tools" target="_blank" rel="noopener">Try the calculators</a>.</p>
     </div>
 
     <div class="known" id="known">
@@ -480,7 +487,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <ul class="specs">
           <li><b>12K+</b> official NRCan fuel ratings (11,031 gas and diesel, 1,230 EV), rebuilt by a script</li>
           <li><b>322</b> automated tests, results checked to the cent</li>
-          <li>Indexed by Google within days; lease calculator averaging <b>#7.7</b></li>
+          <li><b>895</b> search and <b>173</b> AI-search impressions in its first two weeks</li>
         </ul>
         <div class="build-links"><a href="https://carlens.ca/tools" target="_blank" rel="noopener">Try it: carlens.ca/tools ↗</a><span>Code lives in the private CarLens repo</span></div>
       </article>
@@ -656,6 +663,32 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   svg.appendChild(el("text", { x: f[0] + 10, y: f[1] - 10, class: "lbl" }, "#33"));
   svg.appendChild(el("text", { x: l[0] - 8, y: l[1] - 12, "text-anchor": "end", class: "lbl" }, "#12.6"));
   document.getElementById("chart").appendChild(svg);
+  var cw = document.getElementById("chart"); cw.scrollLeft = cw.scrollWidth;
+
+  // Daily impressions, Oct 6 – Nov 16 2026 (Search Console). Calculators launched Nov 4.
+  var days = [["Oct 6",72],["Oct 7",75],["Oct 8",62],["Oct 9",71],["Oct 10",73],["Oct 11",53],["Oct 12",91],["Oct 13",70],["Oct 14",81],["Oct 15",95],["Oct 16",96],["Oct 17",88],["Oct 18",67],["Oct 19",86],["Oct 20",77],["Oct 21",116],["Oct 22",107],["Oct 23",85],["Oct 24",73],["Oct 25",66],["Oct 26",77],["Oct 27",99],["Oct 28",58],["Oct 29",71],["Oct 30",67],["Oct 31",62],["Nov 1",56],["Nov 2",78],["Nov 3",107],["Nov 4",83],["Nov 5",136],["Nov 6",204],["Nov 7",201],["Nov 8",276],["Nov 9",227],["Nov 10",188],["Nov 11",203],["Nov 12",169],["Nov 13",181],["Nov 14",166],["Nov 15",125],["Nov 16",245]];
+  (function () {
+    var W2 = 960, H2 = 220, L2 = 40, R2 = 16, T2 = 18, B2 = 30, iw2 = W2 - L2 - R2, ih2 = H2 - T2 - B2;
+    var n2 = days.length, st = iw2 / n2, bw2 = st * 0.62, max2 = 300;
+    var y2 = function (v) { return T2 + ih2 - (v / max2) * ih2; };
+    var sv = el("svg", { viewBox: "0 0 " + W2 + " " + H2, "aria-hidden": "true" });
+    [0, 100, 200, 300].forEach(function (v) {
+      sv.appendChild(el("line", { x1: L2, x2: W2 - R2, y1: y2(v), y2: y2(v), stroke: "var(--line)", "stroke-width": 1, fill: "none" }));
+      sv.appendChild(el("text", { x: L2 - 8, y: y2(v) + 4, "text-anchor": "end" }, v));
+    });
+    days.forEach(function (d, i) {
+      var x = L2 + i * st + (st - bw2) / 2;
+      sv.appendChild(el("rect", { x: x, y: y2(d[1]), width: bw2, height: T2 + ih2 - y2(d[1]), rx: 2, fill: "var(--chart-bar)" }));
+      if (d[0] === "Oct 6" || d[0] === "Oct 20" || d[0] === "Nov 1" || d[0] === "Nov 16") sv.appendChild(el("text", { x: L2 + i * st + st / 2, y: H2 - 8, "text-anchor": "middle" }, d[0]));
+    });
+    var li = 29, lx = L2 + li * st + st / 2;
+    sv.appendChild(el("line", { x1: lx, x2: lx, y1: T2 - 4, y2: T2 + ih2, stroke: "var(--blue)", "stroke-width": 2, "stroke-dasharray": "4 4", fill: "none" }));
+    sv.appendChild(el("text", { x: lx - 8, y: T2 + 8, "text-anchor": "end", class: "lbl" }, "Calculators live"));
+    var pk = 33;
+    sv.appendChild(el("text", { x: L2 + pk * st + st / 2, y: y2(276) - 6, "text-anchor": "middle", class: "lbl" }, "276"));
+    document.getElementById("update-chart").appendChild(sv);
+    var uw = document.getElementById("update-chart"); uw.scrollLeft = uw.scrollWidth;
+  })();
 
   // re-run the scan
   var report = document.getElementById("report");
